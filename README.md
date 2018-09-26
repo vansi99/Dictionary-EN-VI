@@ -1,3 +1,6 @@
 # Dictionary-EN-VI
-```
-Create by [VanSi](https://github.com/vansi99), [HongHanh](https://github.com/HongHanh120).
+
+Create by SH team.
+## About us:
+###  [VanSi](https://github.com/vansi99)
+###  [HongHanh](https://github.com/HongHanh120).
