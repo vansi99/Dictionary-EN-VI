@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         DbWords words = new DbWords();
-        ResultSet rs = words.getDetails();
+        ResultSet rs = words.getDetails("hello");
         if(rs.next()) {
             System.out.println("nghia cua tu la:" + rs.getString("detail"));
         }
