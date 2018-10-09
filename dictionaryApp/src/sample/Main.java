@@ -18,7 +18,7 @@ public class Main extends Application {
             System.out.println("nghia cua tu la:" + rs.getString("detail"));
         }
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Dictionary");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
