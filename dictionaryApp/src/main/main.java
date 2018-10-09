@@ -1,25 +1,22 @@
-package sample;
+package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.DbWords;
 
 import java.sql.ResultSet;
 
-public class Main extends Application {
+public class main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        DbWords words = new DbWords();
-        ResultSet rs = words.getDetails("hello");
-        if(rs.next()) {
-            System.out.println("nghia cua tu la:" + rs.getString("detail"));
-        }
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+
+        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
         primaryStage.setTitle("Dictionary");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 450, 375));
         primaryStage.show();
     }
 

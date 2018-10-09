@@ -1,4 +1,4 @@
-package sample;
+package model;
 import java.sql.*;
 
 public class Db {
@@ -7,7 +7,7 @@ public class Db {
     public Db() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dictionary","root","");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dictionary","root","1234");
         }catch (ClassNotFoundException e){
             e.printStackTrace();
         } catch (SQLException se){

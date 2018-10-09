@@ -1,7 +1,9 @@
-package sample;
+package model;
+import model.Db;
+
 import java.sql.*;
 
-public class DbWords extends Db{
+public class DbWords extends Db {
     public ResultSet getDetails(String word){
         return getData("SELECT detail FROM my_db WHERE word = ?",word);
     }
