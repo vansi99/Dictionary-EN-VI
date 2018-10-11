@@ -1,0 +1,9 @@
+
+.button{
+    -fx-background-color: white;
+    -fx-background-image: url("../image/search.png");
+    -fx-background-repeat: stretch;
+}
+.background{
+    -fx-background-color: white;
+}
