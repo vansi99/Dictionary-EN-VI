@@ -34,7 +34,7 @@ public class Db {
         return null;
     }
 
-    public boolean postData(String sql) {
+    public boolean postAndDeleteData(String sql) {
         try {
             stmt = null;
             stmt= conn.createStatement();

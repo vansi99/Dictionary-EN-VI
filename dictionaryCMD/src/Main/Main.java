@@ -18,21 +18,24 @@ public class Main {
                 String detail = words.getDetail();
                 if(detail == null)
                     System.out.println("Trong từ điển hiện không có từ này!");
-                System.out.println("\nNghĩa của từ là: " + detail);
+                else
+                    System.out.println("\nNghĩa của từ là: " + detail);
             }
             else if(number == 2) {
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("Nhập từ muốn thêm: ");
-                String word = scanner.nextLine();
+                String word = scanner.nextLine().toLowerCase();
                 System.out.print("Nhập nghĩa của từ muốn thêm: ");
-                String detail = scanner.nextLine().toLowerCase();
+                String detail = scanner.nextLine();
                 DbWords postWord = new DbWords();
                 postWord.postWord(word, detail);
             }
             else if(number == 3){
                 Scanner scanner = new Scanner(System.in);
-                System.out.print("Nhập từ muốn thêm: ");
-                String word = scanner.nextLine();
+                System.out.print("Nhập từ muốn xóa: ");
+                String word = scanner.nextLine().toLowerCase();
+                DbWords deleteWord = new DbWords();
+                deleteWord.deleteWord(word);
             }
             else if(number == 4){
                 running = false;
