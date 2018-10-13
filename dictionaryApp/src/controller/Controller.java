@@ -21,9 +21,7 @@ public class Controller {
         System.out.println("si dz nhat!");
         WebEngine webEngine = browser.getEngine();
         DbWords words = new DbWords();
-//        if(words.postWord("dicksi", "đít")){
-//            System.out.println("post success");
-//        } else System.out.println("post fail");
+
         words.setWord("word");
         try {
             ResultSet rs = words.getDetail();

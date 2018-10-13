@@ -45,19 +45,19 @@ public class Db {
         }
     }
 
-    public boolean deleteData(String sql){
-        try {
-            stmt = null;
-            stmt= conn.createStatement();
-            stmt.executeUpdate(sql);
-            System.out.println("success");
-            return true;
-        } catch (SQLException e) {
-            System.out.println("fail");
-            System.out.println(e.getMessage());
-            return false;
-        }
-    }
+//    public boolean deleteData(String sql){
+//        try {
+//            stmt = null;
+//            stmt= conn.createStatement();
+//            stmt.executeUpdate(sql);
+//            System.out.println("success");
+//            return true;
+//        } catch (SQLException e) {
+//            System.out.println("fail");
+//            System.out.println(e.getMessage());
+//            return false;
+//        }
+//    }
 
 
 
