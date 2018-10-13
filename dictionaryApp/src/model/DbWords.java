@@ -4,8 +4,6 @@ import java.sql.*;
 
 public class DbWords extends Db {
     private String word;
-    private ResultSet referWord;
-    private ResultSet detail;
     public DbWords(){}
 
     public DbWords(String word){
@@ -20,20 +18,14 @@ public class DbWords extends Db {
         this.word = word;
     }
 
-    public void setDetail(ResultSet detail) {
-        this.detail = detail;
-    }
-
     public ResultSet getReferWord() {
         String sql = "SELECT word FROM dictionary WHERE word LIKE '" + word + "%'";
-        referWord = getData(sql);
-        return referWord;
+        return getData(sql);
     }
 
-    public ResultSet setDetailAndId() {
-        String sql = "SELECT detail,id FROM dictionary WHERE word = '" + word + "'";
-        ResultSet result = getData(sql);
-
+    public ResultSet getDetail() {
+        String sql = "SELECT detail FROM dictionary WHERE word = '" + word + "'";
+        return getData(sql);
     }
 
     public boolean postWord(String word, String detail){
