@@ -4,10 +4,12 @@ import java.sql.*;
 
 public class DbWords extends Db {
     private String word;
+    private String detail;
     public DbWords(){}
 
     public DbWords(String word){
         this.word = word;
+        this.detail = getDetail();
     }
 
     public String getWord() {
@@ -18,12 +20,7 @@ public class DbWords extends Db {
         this.word = word;
     }
 
-    public ResultSet getReferWord() {
-        String sql = "SELECT word FROM dictionary WHERE word LIKE '" + word + "%'";
-        return getData(sql);
-    }
-
-    public ResultSet getDetail() {
+    public String getDetail() {
         String sql = "SELECT detail FROM dictionary WHERE word = '" + word + "'";
         return getData(sql);
     }
