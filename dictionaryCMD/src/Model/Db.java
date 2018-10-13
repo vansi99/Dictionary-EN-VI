@@ -7,8 +7,7 @@ public class Db {
     public Db() {
         try {
             Class.forName("org.sqlite.JDBC");
-                conn = DriverManager.getConnection("jdbc:sqlite:dictionaryE_V.db");
-                System.out.println("Connection to SQLite has been established.");
+            conn = DriverManager.getConnection("jdbc:sqlite:dictionaryE_V.db");
         }catch (ClassNotFoundException e){
             e.printStackTrace();
         } catch (SQLException se){
@@ -18,12 +17,16 @@ public class Db {
         }
     }
 
-    public ResultSet getData(String sql) {
+    public String getData(String sql) {
         try{
             stmt = null;
             stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-            return rs;
+            if(rs.next()){
+                String detail = rs.getString("detail");
+                rs.close();
+                return detail;
+            } else return null;
 
         } catch(SQLException e){
             e.printStackTrace();
@@ -37,6 +40,7 @@ public class Db {
             stmt= conn.createStatement();
             stmt.executeUpdate(sql);
             System.out.println("success");
+
             return true;
         } catch (SQLException e) {
             System.out.println("fail");
@@ -44,20 +48,6 @@ public class Db {
             return false;
         }
     }
-
-//    public boolean deleteData(String sql){
-//        try {
-//            stmt = null;
-//            stmt= conn.createStatement();
-//            stmt.executeUpdate(sql);
-//            System.out.println("success");
-//            return true;
-//        } catch (SQLException e) {
-//            System.out.println("fail");
-//            System.out.println(e.getMessage());
-//            return false;
-//        }
-//    }
 
 
 
