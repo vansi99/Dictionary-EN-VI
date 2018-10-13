@@ -16,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/out/Model/DbWords.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Model/DbWords.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/com/dict/Main.class" beforeDir="false" />
 
+
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -126,6 +127,7 @@
             <state relative-caret-position="68">
               <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
 
+
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,10 +159,12 @@
       </file>
       <file pinned="false" current-in-tab="false">
 
+
         <entry file="file://$PROJECT_DIR$/src/Model/Db.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-153">
               <caret line="18" selection-start-line="18" selection-end-line="18" />
+
 
             </state>
           </provider>
@@ -231,6 +235,7 @@
             <path>
               <item name="dictionaryCMD" type="b2602c69:ProjectViewProjectNode" />
               <item name="dictionaryCMD" type="462c0819:PsiDirectoryNode" />
+
 
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -405,22 +410,8 @@
           <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="442" column="38" lean-forward="true" selection-start-line="442" selection-start-column="38" selection-end-line="442" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
+
         </state>
       </provider>
     </entry>
