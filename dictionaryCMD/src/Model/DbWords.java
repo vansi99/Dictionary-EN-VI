@@ -31,8 +31,18 @@ public class DbWords extends Db {
             return false;
         }
         String sql = "INSERT INTO dictionary(word,detail) VALUES ('" + word +"','"+ detail + "')";
-        boolean posted = postData(sql);
+        boolean posted = postAndDeleteData(sql);
         return posted;
+    }
+
+    public boolean deleteWord(String word){
+        if(word == null){
+            System.out.println("fail");
+            return false;
+        }
+        String sql = "DELETE FROM dictionary WHERE word = '" + word + "'";
+        boolean deleted = postAndDeleteData(sql);
+        return deleted;
     }
 
 
