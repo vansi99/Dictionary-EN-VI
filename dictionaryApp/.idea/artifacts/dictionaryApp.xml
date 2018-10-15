@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="dictionaryApp">
+    <output-path>$PROJECT_DIR$/out/artifacts/dictionaryApp</output-path>
+    <root id="root">
+      <element id="archive" name="dictionaryApp.jar">
+        <element id="module-output" name="dictionaryApp" />
+      </element>
+    </root>
+  </artifact>
+</component>
