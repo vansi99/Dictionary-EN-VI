@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Nhập phím 1: TRA TỪ" + "\nNhập phím 2: THÊM TỪ" + "\nNhập phím 4: XÓA TỪ" + "\nNhập phím 4: THOÁT KHỎI CHƯƠNG TRÌNH");
+        System.out.println("Nhập phím 1: TRA TỪ" + "\nNhập phím 2: THÊM TỪ" + "\nNhập phím 3: XÓA TỪ" + "\nNhập phím 4: THOÁT KHỎI CHƯƠNG TRÌNH");
         boolean running = true;
         while(running) {
             Scanner scannerNumber = new Scanner(System.in);
