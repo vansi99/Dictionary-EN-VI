@@ -1,7 +1,17 @@
 
-.button{
+.button_search{
     -fx-background-color: white;
-    -fx-background-image: url("../image/search.png");
+    -fx-background-image: url("../image/magnifying-glass.png");
+    -fx-background-repeat: stretch;
+}
+.button_sound{
+    -fx-background-color: white;
+    -fx-background-image: url("../image/volume.png");
+    -fx-background-repeat: stretch;
+}
+.button_delete{
+    -fx-background-color: white;
+    -fx-background-image: url("../image/volume.png");
     -fx-background-repeat: stretch;
 }
 .background{
