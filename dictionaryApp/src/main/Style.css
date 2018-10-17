@@ -10,8 +10,18 @@
     -fx-background-repeat: stretch;
 }
 .button_delete{
-    -fx-background-color: white;
-    -fx-background-image: url("../image/volume.png");
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/trash-light.png");
+    -fx-background-repeat: stretch;
+}
+.button_add{
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/plus-light.png");
+    -fx-background-repeat: stretch;
+}
+.button_edit{
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/pen-light.png");
     -fx-background-repeat: stretch;
 }
 .background{

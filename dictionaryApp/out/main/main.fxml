@@ -17,30 +17,30 @@
     <top>
         <HBox prefHeight="80.0" prefWidth="600.0">
             <children>
-                <AnchorPane prefHeight="47.0" prefWidth="239.0" style="-fx-background-color: #194775;" stylesheets="@Style.css">
+                <AnchorPane prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #194775;" stylesheets="@Style.css">
                     <children>
                   <TextField layoutX="10.0" layoutY="54.0" prefHeight="30.0" prefWidth="190.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-                        <Button fx:id="button" layoutX="199.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleOnClick" prefHeight="24.0" prefWidth="24.0" style="-fx-background-image: search.png;" styleClass="button_search" stylesheets="@Style.css" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="12.0">
+                        <Button fx:id="button" layoutX="199.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleOnClick" prefHeight="24.0" prefWidth="24.0" style="-fx-background-image: search.png" styleClass="button_search" stylesheets="@Style.css" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="12.0">
                             <BorderPane.margin>
                                 <Insets />
                             </BorderPane.margin></Button>
-                        <ImageView fitHeight="26.0" fitWidth="32.0" layoutX="43.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../image/open-book.png" />
-                            </image>
-                        </ImageView>
-                        <Label layoutX="76.0" layoutY="17.0" prefHeight="19.0" prefWidth="138.0" text="English Dictionary" textFill="#f8f4f4">
+                        <Label layoutX="81.0" layoutY="15.0" prefHeight="19.0" prefWidth="138.0" text="English Dictionary" textFill="#f8f4f4">
                             <font>
                                 <Font name="System Bold" size="13.0" />
                             </font>
                         </Label>
+                        <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="51.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/open-book.png" />
+                            </image>
+                        </ImageView>
                     </children>
                 </AnchorPane>
                 <AnchorPane maxHeight="80.0" maxWidth="1200.0" prefHeight="80.0" prefWidth="363.0" style="-fx-background-color: #26527d;" HBox.hgrow="ALWAYS">
                     <children>
                         <Label layoutX="47.0" layoutY="58.0" prefHeight="20.0" prefWidth="69.0" styleClass="icon" stylesheets="@Style.css" text="Definition" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="13.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                         </Label>
                         <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="8.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
@@ -48,6 +48,9 @@
                                 <Image url="@../image/dictionary.png" />
                             </image>
                   </ImageView>
+                  <Button layoutX="255.0" layoutY="55.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="button_edit" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="75.0" />
+                  <Button layoutX="288.0" layoutY="55.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="button_delete" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0" />
+                  <Button layoutX="285.0" layoutY="55.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="button_add" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="7.0" />
                     </children>
             </AnchorPane>
             </children>
@@ -60,12 +63,12 @@
             </BorderPane.margin></ListView>
     </left>
     <center>
-        <WebView fx:id="browser" prefHeight="317.0" prefWidth="339.0" BorderPane.alignment="CENTER" />
+        <WebView fx:id="browser" prefHeight="315.0" prefWidth="339.0" BorderPane.alignment="CENTER" />
     </center>
     <right>
-        <AnchorPane maxWidth="30.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="317.0" prefWidth="30.0" styleClass="background" stylesheets="@Style.css">
+        <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="317.0" prefWidth="31.0" styleClass="background" stylesheets="@Style.css">
          <children>
-            <Button layoutX="3.0" layoutY="2.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="24.0" styleClass="button_sound" stylesheets="@Style.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="3.0" />
+            <Button layoutX="5.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="button_sound" stylesheets="@Style.css" AnchorPane.rightAnchor="1.0" />
          </children>
         </AnchorPane>
     </right>
