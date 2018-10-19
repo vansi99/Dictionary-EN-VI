@@ -15,29 +15,46 @@ public class Controller {
 
     public WebView browser;
 
-    public Button button;
+    public Button button_search;
 
-    public void handleOnClick(){
-        System.out.println("si dz nhat!");
-        WebEngine webEngine = browser.getEngine();
-        DbWords words = new DbWords();
+    public void handleOnSearch() {
+        System.out.println("si ngu si");
+    }
 
-        words.setWord("word");
-        try {
-            ResultSet rs = words.getDetail();
-            while (rs.next()){
-                System.out.println(rs.getString("detail"));
-                String detail = rs.getString("detail");
-                String html = detail ;
-                webEngine.loadContent(html);
-            }
-        } catch (SQLException e){
-            System.out.println(e);
-        }
+
+
+
+
+
+
+
+
+
+
+
+//    public Button button;
+//
+//    public void handleOnClick(){
+//        System.out.println("si dz nhat!");
+//        WebEngine webEngine = browser.getEngine();
+//        DbWords words = new DbWords();
+//
+//        words.setWord("word");
+//        try {
+//            ResultSet rs = words.getDetail();
+//            while (rs.next()){
+//                System.out.println(rs.getString("detail"));
+//                String detail = rs.getString("detail");
+//                String html = detail ;
+//                webEngine.loadContent(html);
+//            }
+//        } catch (SQLException e){
+//            System.out.println(e);
+//        }
 
 
 
     }
 
 
-}
+

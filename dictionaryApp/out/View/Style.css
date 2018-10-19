@@ -10,7 +10,7 @@
     -fx-background-repeat: stretch;
 }
 .button_delete{
-    -fx-background-color: #26527d;
+    -fx-background-color: white;
     -fx-background-image: url("../image/trash-light.png");
     -fx-background-repeat: stretch;
 }
@@ -26,4 +26,22 @@
 }
 .background{
     -fx-background-color: white;
+}
+.font {
+    -fx-font-family: "Arial";
+    -fx-font-color: red;
+}
+.button_voice {
+    -fx-background-color: #337aff;
+    -fx-background-image: url("../image/voice.png");
+    -fx-background-repeat: stretch;
+}
+.button_translate {
+    -fx-background-color: #337aff;
+    -fx-background-repeat: stretch;
+}
+.button_speaker {
+    -fx-background-color: #337aff;
+    -fx-background-image: url("../image/voice.png");
+    -fx-background-repeat: stretch;
 }

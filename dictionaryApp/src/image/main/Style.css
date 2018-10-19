@@ -1,0 +1,38 @@
+
+.button_search{
+    -fx-background-color: white;
+    -fx-background-image: url("../image/magnifying-glass.png");
+    -fx-background-repeat: stretch;
+}
+.button_sound{
+    -fx-background-color: white;
+    -fx-background-image: url("../image/volume.png");
+    -fx-background-repeat: stretch;
+}
+.button_delete{
+    -fx-background-color: white;
+    -fx-background-image: url("../image/trash-light.png");
+    -fx-background-repeat: stretch;
+}
+.button_add{
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/plus-light.png");
+    -fx-background-repeat: stretch;
+}
+.button_edit{
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/pen-light.png");
+    -fx-background-repeat: stretch;
+}
+.background{
+    -fx-background-color: white;
+}
+.font {
+    -fx-font-family: "Arial";
+    -fx-font-color: red;
+}
+.button_voice {
+    -fx-background-color: #337aff;
+    -fx-background-image: url("../image/pen-light.png");
+    -fx-background-repeat: stretch;
+}
