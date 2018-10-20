@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="35.0" prefWidth="600.0" style="-fx-background-color: #005ecc #0044f0 #0035ff;">
          <children>
@@ -23,7 +23,7 @@
          <children>
             <AnchorPane prefHeight="45.0" prefWidth="350.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="283.0" text="English" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="283.0" styleClass="button_voice" text="English" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -60,9 +60,9 @@
       </HBox>
       <AnchorPane prefHeight="54.0" prefWidth="600.0">
          <children>
-            <Button layoutX="12.0" layoutY="16.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="545.0" />
-            <Button layoutX="549.0" layoutY="7.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="10.0" />
-            <Button layoutX="73.0" layoutY="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="459.0" text="Translate" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0">
+            <Button layoutX="12.0" layoutY="16.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="button_voice" stylesheets="@Style.css" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="545.0" />
+            <Button layoutX="549.0" layoutY="7.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="button_speaker" stylesheets="@Style.css" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="10.0" />
+            <Button layoutX="73.0" layoutY="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="459.0" styleClass="button_translate" stylesheets="@Style.css" text="Translate" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0">
                <font>
                   <Font size="16.0" />
                </font>

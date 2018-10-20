@@ -11,12 +11,12 @@
 }
 .button_delete{
     -fx-background-color: white;
-    -fx-background-image: url("../image/trash-light.png");
+    -fx-background-image: url("../image/trash.png");
     -fx-background-repeat: stretch;
 }
 .button_add{
     -fx-background-color: #26527d;
-    -fx-background-image: url("../image/plus-light.png");
+    -fx-background-image: url("../image/add-button.png");
     -fx-background-repeat: stretch;
 }
 .button_edit{
@@ -33,15 +33,14 @@
 }
 .button_voice {
     -fx-background-color: #337aff;
-    -fx-background-image: url("../image/voice.png");
-    -fx-background-repeat: stretch;
-}
-.button_translate {
-    -fx-background-color: #337aff;
+    -fx-background-image: url("../image/model.png");
     -fx-background-repeat: stretch;
 }
 .button_speaker {
     -fx-background-color: #337aff;
-    -fx-background-image: url("../image/voice.png");
+    -fx-background-image: url("../image/model.png");
     -fx-background-repeat: stretch;
+}
+.button_translate {
+    -fx-background-color: #337aff;
 }
