@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        DbWords words = new DbWords();
         System.out.println("Nhập phím 1: TRA TỪ" + "\nNhập phím 2: THÊM TỪ" + "\nNhập phím 3: XÓA TỪ" + "\nNhập phím 4: THOÁT KHỎI CHƯƠNG TRÌNH");
         boolean running = true;
         while(running) {
@@ -14,7 +15,13 @@ public class Main {
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("Nhập từ cần tra: ");
                 String word = scanner.nextLine().toLowerCase();
-                DbWords words = new DbWords(word);
+                words.setWord(word);
+                try {
+                    words.voiceWord();
+                } catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
+
                 String detail = words.getDetail();
                 if(detail == null)
                     System.out.println("Trong từ điển hiện không có từ này!");
@@ -27,18 +34,21 @@ public class Main {
                 String word = scanner.nextLine().toLowerCase();
                 System.out.print("Nhập nghĩa của từ muốn thêm: ");
                 String detail = scanner.nextLine();
-                DbWords postWord = new DbWords();
-                postWord.postWord(word, detail);
+                words.postWord(word, detail);
             }
             else if(number == 3){
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("Nhập từ muốn xóa: ");
                 String word = scanner.nextLine().toLowerCase();
-                DbWords deleteWord = new DbWords();
-                deleteWord.deleteWord(word);
+                words.deleteWord(word);
             }
             else if(number == 4){
-                running = false;
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Nhập từ muốn thêm: ");
+                String word = scanner.nextLine().toLowerCase();
+                System.out.print("Nhập nghĩa của từ muốn thêm: ");
+                String detail = scanner.nextLine();
+                words.updateWord(word, detail);
             }
         }
     }
