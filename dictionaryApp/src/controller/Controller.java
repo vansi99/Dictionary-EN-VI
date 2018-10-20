@@ -16,6 +16,7 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import model.Db;
 import model.DbWords;
+import model.GoogleApi;
 import model.VoiceWord;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
@@ -32,11 +33,19 @@ public class Controller {
 
     public void handleOnSearch() {
         WebEngine webEngine = browser.getEngine();
+        GoogleApi x = new GoogleApi();
+        try {
+            x.textToSpeech();
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
         String inputText = get_word.getText();
         input_word.setWord(inputText);
         System.out.println(inputText);
         String html = input_word.getDetail();
         webEngine.loadContent(html);
+
     }
 
     public void showListView() {
