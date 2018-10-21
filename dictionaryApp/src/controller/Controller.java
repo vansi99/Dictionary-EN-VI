@@ -35,7 +35,8 @@ public class Controller {
         WebEngine webEngine = browser.getEngine();
         GoogleApi x = new GoogleApi();
         try {
-            x.textToSpeech();
+            x.recordTextToSpeech();
+            x.playSoundText();
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -67,6 +68,7 @@ public class Controller {
         }
 
     }
+
     public void handleOnVolume() {
         String inputText = get_word.getText();
         input_word.setWord(inputText);

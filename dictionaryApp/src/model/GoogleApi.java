@@ -12,7 +12,22 @@ import com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse;
 import com.google.cloud.texttospeech.v1.TextToSpeechClient;
 import com.google.cloud.texttospeech.v1.VoiceSelectionParams;
 import com.google.protobuf.ByteString;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
+import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
+import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
+import com.google.cloud.speech.v1p1beta1.SpeechClient;
+import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
+import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
+import com.google.protobuf.ByteString;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 
@@ -35,7 +50,7 @@ public class GoogleApi {
         return translation.getTranslatedText();
     }
 
-    public void textToSpeech() throws Exception {
+    public void recordTextToSpeech() throws Exception {
         // Instantiates a client
         try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
             // Set the text input to be synthesized
@@ -70,4 +85,18 @@ public class GoogleApi {
             }
         }
     }
+
+    public void playSoundText() {
+        try {
+            File f = new File("./output.mp3");
+            Media hit = new Media(f.toURI().toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(hit);
+            mediaPlayer.play();
+        } catch(Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Exception: " + ex.getMessage());
+        }
+    }
+
+
 }
