@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<AnchorPane fx:controller="controller.addController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="controller.editController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <VBox layoutX="207.0" layoutY="20.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -23,7 +23,7 @@
                 </AnchorPane>
                 <AnchorPane maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
                     <children>
-                        <Button fx:id="button_edit_word" onAction="#handleOnAddWord" layoutX="534.0" layoutY="13.0" mnemonicParsing="false" text="Button" />
+                        <Button fx:id="button_edit_word" onAction="#handleOnEditWord" layoutX="534.0" layoutY="13.0" mnemonicParsing="false" text="Button" />
                     </children></AnchorPane>
             </children>
         </VBox>

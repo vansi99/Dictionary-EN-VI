@@ -14,10 +14,19 @@ public class editController extends Controller {
     public TextField editTextField;
     public HTMLEditor editHtmlMeaning;
 
+    public void initEdit(){
+        try {
+            editTextField.setText(get_word.getText());
+            editHtmlMeaning.setHtmlText(input_word.getDetail());
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
     public void handleOnEditWord(){
-        String editInputWord = get_word.getText();
-        System.out.println(editInputWord);
-        editTextField.setText(editInputWord);
+        String editInputWord = editTextField.getText();
+
         String editInputText = editHtmlMeaning.getHtmlText();
         try {
             boolean edited = editWord.updateWord(editInputWord, editInputText);

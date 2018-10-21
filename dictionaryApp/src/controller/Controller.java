@@ -20,6 +20,7 @@ import javafx.stage.StageStyle;
 import model.Db;
 import model.DbWords;
 import model.VoiceWord;
+import model.*;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 import java.sql.ResultSet;
@@ -39,8 +40,7 @@ public class Controller {
     public Button button_add_new_word;
     public Button button_add;
 
-    protected TextField get_word;
-    protected Controller editWordConnect;
+    public TextField get_word;
 
     public void handleOnSearch() {
         WebEngine webEngine = browser.getEngine();
@@ -49,30 +49,27 @@ public class Controller {
         System.out.println(inputText);
         String html = input_word.getDetail();
         webEngine.loadContent(html);
+
     }
 
     public void showListView() {
-        String inputText;
-        inputText = get_word.getText();
+        String inputText = get_word.getText();
         input_word.setWord(inputText);
         ArrayList<String> list = input_word.getReferWord();
         try {
             ObservableList<String> data = FXCollections.observableArrayList(list);
             System.out.println(data);
             referable_list.setItems(data);
-            referable_list.getSelectionModel().selectedItemProperty().addListener(
-                    (ObservableValue<? extends String> ov, String old_val,
-                     String new_val) -> {
-                        System.out.println(new_val);
-                    });
-
             referable_list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
             referable_list.setOnMouseClicked (new EventHandler<MouseEvent>() {
                 public void handle(MouseEvent me) {
                     get_word.clear();
                     input_word.setWord(referable_list.getSelectionModel().getSelectedItem().toString());
                     get_word.setText(input_word.getWord());
-                    handleOnSearch();
+                    WebEngine webEngine = browser.getEngine();
+                    String html = input_word.getDetail();
+                    webEngine.loadContent(html);
+
                 }
             });
         }
@@ -108,7 +105,6 @@ public class Controller {
                 stageAdd.setTitle("Add Word");
                 stageAdd.setScene(new Scene(rootAdd));
                 stageAdd.show();
-
             }
             catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -120,7 +116,8 @@ public class Controller {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/View/editWord.fxml")));
             Parent rootEdit = (Parent) fxmlLoader.load();
-
+            editController controller = new editController();
+            controller.initEdit();
             Stage stageEdit = new Stage();
             stageEdit.initStyle(StageStyle.UTILITY);
 
