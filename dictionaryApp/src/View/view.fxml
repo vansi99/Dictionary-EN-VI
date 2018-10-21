@@ -19,7 +19,7 @@
             <children>
                 <AnchorPane prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #194775;" stylesheets="@Style.css">
                     <children>
-                  <TextField fx:id="get_word" layoutX="10.0" layoutY="54.0" onKeyReleased="#showListView" prefHeight="30.0" prefWidth="190.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                  <TextField fx:id="get_word" layoutX="10.0" layoutY="54.0" onKeyReleased="#showListView" onKeyPressed="#setOnKeyPressed" prefHeight="30.0" prefWidth="190.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                         <Button fx:id="button_search" layoutX="199.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleOnSearch" prefHeight="24.0" prefWidth="24.0" style="-fx-background-image: search.png" styleClass="button_search" stylesheets="@Style.css" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="12.0">
                             <BorderPane.margin>
                                 <Insets />

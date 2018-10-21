@@ -4,6 +4,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,9 +29,9 @@ import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
-
 
 
 public class Controller {
@@ -49,63 +50,65 @@ public class Controller {
         System.out.println(inputText);
         String html = input_word.getDetail();
         System.out.println(html);
-        if(html.equals("")){
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        if (html == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Alert");
             alert.setContentText("Từ này hiện chưa có trong từ điển!");
-        }
-        else{
+            alert.showAndWait();
+        } else {
             webEngine.loadContent(html);
+            referable_list.setItems(null);
         }
     }
 
-    public void showListView() {
-        String inputText = get_word.getText();
-        input_word.setWord(inputText);
-        ArrayList<String> list = input_word.getReferWord();
-        try {
-            ObservableList<String> data = FXCollections.observableArrayList(list);
-            System.out.println(data);
-            referable_list.setItems(data);
-            referable_list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-            referable_list.setOnMouseClicked (new EventHandler<MouseEvent>() {
-                public void handle(MouseEvent me) {
-                    get_word.clear();
-                    input_word.setWord(referable_list.getSelectionModel().getSelectedItem().toString());
-                    get_word.setText(input_word.getWord());
-                    WebEngine webEngine = browser.getEngine();
-                    String html = input_word.getDetail();
-                    webEngine.loadContent(html);
-                    referable_list.setItems(null);
-                }
-            });
-        }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
+    public void showListView(KeyEvent ev) {
+        if (ev.getCode() == KeyCode.ENTER) referable_list.setItems(null);
+        else {
+            String inputText = get_word.getText();
+            input_word.setWord(inputText);
+            ArrayList<String> list = input_word.getReferWord();
+            try {
+                ObservableList<String> data = FXCollections.observableArrayList(list);
+                System.out.println(data);
+                referable_list.setItems(data);
+                referable_list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+                referable_list.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    public void handle(MouseEvent me) {
+                        get_word.clear();
+                        input_word.setWord(referable_list.getSelectionModel().getSelectedItem().toString());
+                        get_word.setText(input_word.getWord());
+                        WebEngine webEngine = browser.getEngine();
+                        String html = input_word.getDetail();
+                        webEngine.loadContent(html);
+                        referable_list.setItems(null);
+                    }
+                });
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+
         }
     }
-    public void setOnKeyPressed(KeyEvent key){
+
+    public void setOnKeyPressed(KeyEvent key) {
         if (key.getCode() == KeyCode.ENTER) {
-            button_search.setOnMouseEntered( event -> {
-                handleOnSearch();
-            });
+            WebEngine webEngine = browser.getEngine();
+            String inputText = get_word.getText();
+            input_word.setWord(inputText);
+            System.out.println(inputText);
+            String html = input_word.getDetail();
+            System.out.println(html);
+            if (html == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Alert");
+                alert.setContentText("Từ này hiện chưa có trong từ điển!");
+                alert.showAndWait();
+            } else {
+                webEngine.loadContent(html);
+                referable_list.setItems(null);
+            }
         }
     }
-//        if(key.getCode() == KeyCode.ENTER)
-//            handleOnSearch();
-//        String inputText = get_word.getText();
-//        input_word.setWord(inputText);
-//        String html = input_word.getDetail();
-//        if(html.equals("")){
-//            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-//            alert.setTitle("Alert");
-//            alert.setHeaderText("Từ này hiện chưa có trong từ điển!");
-//        }
-//        else{
-//            handleOnSearch();
-//        }
-//    }
-
 
 
     public void handleOnVolume() {
@@ -114,34 +117,33 @@ public class Controller {
         System.out.println(inputText);
         try {
             input_word.voiceWord();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
     }
+
     @FXML
-    public void handleOnButtonAdd(ActionEvent event){
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(this.getClass().getResource("/View/addWord.fxml"));
-                Parent rootAdd = (Parent) fxmlLoader.load();
+    public void handleOnButtonAdd(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(this.getClass().getResource("/View/addWord.fxml"));
+            Parent rootAdd = (Parent) fxmlLoader.load();
 
-                Stage stageAdd = new Stage();
-                stageAdd.initStyle(StageStyle.UTILITY);
+            Stage stageAdd = new Stage();
+            stageAdd.initStyle(StageStyle.UTILITY);
 
-                stageAdd.hide();
-                stageAdd.setTitle("Add Word");
-                stageAdd.setScene(new Scene(rootAdd));
-                stageAdd.show();
-            }
-            catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
+            stageAdd.hide();
+            stageAdd.setTitle("Add Word");
+            stageAdd.setScene(new Scene(rootAdd));
+            stageAdd.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
-    public void handleOnButtonEdit(ActionEvent event){
+    public void handleOnButtonEdit(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/View/editWord.fxml")));
             Parent rootEdit = (Parent) fxmlLoader.load();
@@ -154,28 +156,34 @@ public class Controller {
             stageEdit.show();
             editController editController = fxmlLoader.getController();
             editController.initEdit(get_word.getText(), input_word.getDetail());
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
     public void handleOnDeleteWord() {
         try {
-        WebEngine webEngine = browser.getEngine();
-        String inputText = get_word.getText();
-        inputText.toLowerCase();
-        boolean deleted = input_word.deleteWord(inputText);
-        if (deleted)
-            System.out.println("success");
-        else System.out.println("fail");
-        }
-        catch (Exception e) {
+            WebEngine webEngine = browser.getEngine();
+            String inputText = get_word.getText();
+            inputText.toLowerCase();
+            boolean deleted = input_word.deleteWord(inputText);
+            if (deleted) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Alert");
+                alert.setContentText("Successs!");
+                alert.showAndWait();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Alert");
+                alert.setContentText("Có lỗi xảy ra!");
+                alert.showAndWait();
+            }
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public void handleOnButtonGoogleAPI(ActionEvent event){
+    public void handleOnButtonGoogleAPI(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(this.getClass().getResource("/View/googleAPI.fxml"));
@@ -188,8 +196,7 @@ public class Controller {
             stageGoogleAPI.setTitle("Google API");
             stageGoogleAPI.setScene(new Scene(rootGoogleAPI));
             stageGoogleAPI.show();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
