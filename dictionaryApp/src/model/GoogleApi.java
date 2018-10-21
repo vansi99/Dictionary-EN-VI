@@ -40,12 +40,12 @@ public class GoogleApi {
         return translation.getTranslatedText();
     }
 
-    public void recordTextToSpeech() throws Exception {
+    public void recordTextToSpeech(String Text) throws Exception {
         // Instantiates a client
         try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
             // Set the text input to be synthesized
             SynthesisInput input = SynthesisInput.newBuilder()
-                    .setText("Hello, World!")
+                    .setText(Text)
                     .build();
 
             // Build the voice request, select the language code ("en-US") and the ssml voice gender
@@ -82,6 +82,7 @@ public class GoogleApi {
             Media hit = new Media(f.toURI().toString());
             MediaPlayer mediaPlayer = new MediaPlayer(hit);
             mediaPlayer.play();
+            f.delete();
         } catch(Exception ex) {
             ex.printStackTrace();
             System.out.println("Exception: " + ex.getMessage());
