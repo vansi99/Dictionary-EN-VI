@@ -44,3 +44,7 @@
 .button_translate {
     -fx-background-color: #337aff;
 }
+.button_googleAPI{
+    -fx-background-color: while;
+    -fx-background-repeat: stretch;
+}

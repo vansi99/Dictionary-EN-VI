@@ -36,8 +36,6 @@ public class Controller {
     public Button button_search;
     public ListView<String> referable_list;
     public DbWords input_word = new DbWords();
-    public Label label;
-    public Button button_add_new_word;
     public Button button_add;
 
     public TextField get_word;
@@ -116,8 +114,6 @@ public class Controller {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/View/editWord.fxml")));
             Parent rootEdit = (Parent) fxmlLoader.load();
-            editController controller = new editController();
-            controller.initEdit();
             Stage stageEdit = new Stage();
             stageEdit.initStyle(StageStyle.UTILITY);
 
@@ -125,6 +121,8 @@ public class Controller {
             stageEdit.setTitle("Edit Word");
             stageEdit.setScene(new Scene(rootEdit));
             stageEdit.show();
+            editController editController = fxmlLoader.getController();
+            editController.initEdit(get_word.getText(), input_word.getDetail());
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -140,6 +138,25 @@ public class Controller {
         if (deleted)
             System.out.println("success");
         else System.out.println("fail");
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void handleOnButtonGoogleAPI(ActionEvent event){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(this.getClass().getResource("/View/googleAPI.fxml"));
+            Parent rootGoogleAPI = (Parent) fxmlLoader.load();
+
+            Stage stageGoogleAPI = new Stage();
+            stageGoogleAPI.initStyle(StageStyle.UTILITY);
+
+            stageGoogleAPI.hide();
+            stageGoogleAPI.setTitle("Google API");
+            stageGoogleAPI.setScene(new Scene(rootGoogleAPI));
+            stageGoogleAPI.show();
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

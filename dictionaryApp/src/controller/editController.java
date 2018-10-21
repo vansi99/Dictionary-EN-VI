@@ -9,15 +9,15 @@ import model.DbWords;
 
 import javax.speech.Word;
 
-public class editController extends Controller {
+public class editController {
     public DbWords editWord = new DbWords();
     public TextField editTextField;
     public HTMLEditor editHtmlMeaning;
 
-    public void initEdit(){
+    public void initEdit(String word, String detail){
         try {
-            editTextField.setText(get_word.getText());
-            editHtmlMeaning.setHtmlText(input_word.getDetail());
+            editTextField.setText(word);
+            editHtmlMeaning.setHtmlText(detail);
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
