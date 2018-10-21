@@ -48,15 +48,15 @@
                                 <Image url="@../image/dictionary.png" />
                             </image>
                   </ImageView>
-                  <Button layoutX="255.0" layoutY="55.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="button_edit" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0" />
-                  <Button layoutX="285.0" layoutY="55.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="button_add" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="7.0" />
+                  <Button fx:id="button_edit" layoutX="255.0" layoutY="55.0" onAction="#handleOnButtonEdit" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="button_edit" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0" />
+                  <Button fx:id="button_add" layoutX="285.0" layoutY="55.0" onAction="#handleOnButtonAdd" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="button_add" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="7.0" />
                     </children>
             </AnchorPane>
             </children>
         </HBox>
     </top>
     <left>
-        <ListView fx:id="referable_list" prefHeight="314.0" prefWidth="240.0" BorderPane.alignment="CENTER">
+        <ListView fx:id="referable_list" onMouseClicked="#handleOnSearch" prefHeight="314.0" prefWidth="240.0" BorderPane.alignment="CENTER">
             <BorderPane.margin>
                 <Insets />
             </BorderPane.margin></ListView>
@@ -68,7 +68,7 @@
         <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="317.0" prefWidth="31.0" styleClass="background" stylesheets="@Style.css">
          <children>
             <Button layoutX="5.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="button_sound" onAction="#handleOnVolume" stylesheets="@Style.css" AnchorPane.rightAnchor="1.0" />
-            <Button layoutX="3.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="button_delete" stylesheets="@Style.css" AnchorPane.rightAnchor="3.0" />
+            <Button layoutX="3.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" styleClass="button_delete" onAction="#handleOnDeleteWord" stylesheets="@Style.css" AnchorPane.rightAnchor="3.0" />
          </children>
         </AnchorPane>
     </right>
