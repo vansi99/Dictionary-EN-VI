@@ -1,0 +1,62 @@
+
+.button_search{
+    -fx-background-color: white;
+    -fx-background-image: url("../image/magnifying-glass.png");
+    -fx-background-repeat: stretch;
+    -fx-cursor: hand;
+}
+.button_sound{
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/speaker.png");
+    -fx-background-repeat: stretch;
+    -fx-cursor: hand;
+}
+.button_delete{
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/trash.png");
+    -fx-background-repeat: stretch;
+    -fx-cursor: hand;
+}
+.button_add{
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/plus.png");
+    -fx-background-repeat: stretch;
+    -fx-cursor: hand;
+}
+.button_edit{
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/pen.png");
+    -fx-background-repeat: stretch;
+    -fx-cursor: hand;
+}
+.background{
+    -fx-background-color: white;
+}
+.font {
+    -fx-font-family: "Arial";
+    -fx-font-color: red;
+}
+
+.button_speaker {
+    -fx-background-color: #337aff;
+    -fx-background-image: url("../image/volume-up-interface-symbol.png");
+    -fx-background-repeat: stretch;
+    -fx-cursor: hand;
+}
+.button_translate {
+    -fx-background-color: #337aff;
+    -fx-cursor: hand;
+}
+
+.button_arrow{
+    -fx-background-color: #337aff;
+    -fx-background-image: url("../image/long-arrow-pointing-to-the-right.png");
+    -fx-background-repeat: stretch;
+    -fx-cursor: hand;
+}
+.button_google{
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/translate-edit.png");
+    -fx-background-repeat: stretch;
+    -fx-cursor: hand;
+}
