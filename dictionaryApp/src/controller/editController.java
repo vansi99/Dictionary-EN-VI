@@ -37,6 +37,7 @@ public class editController {
     public void handleOnEditWord(){
         String editInputWord = editTextField.getText();
         editWord.setWord(editInputWord);
+        System.out.println(editInputWord);
         String editInputText = editHtmlMeaning.getHtmlText();
         System.out.println(editInputText);
         try {

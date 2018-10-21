@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="dictionaryApp.jnlp">
+  <information>
+    <title>dictionaryApp</title>
+    <vendor>Unknown</vendor>
+    <description>dictionaryApp</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="api-common-1.7.0.jar" size="44558" download="eager" />
+    <jar href="commons-codec-1.9.jar" size="263965" download="eager" />
+    <jar href="commons-logging-1.2.jar" size="61829" download="eager" />
+    <jar href="dictionaryApp.jar" size="15650534" download="eager" />
+    <jar href="error_prone_annotations-2.1.2.jar" size="12142" download="eager" />
+    <jar href="freetts-1.2.2.jar" size="9314197" download="eager" />
+    <jar href="gax-1.32.0.jar" size="265395" download="eager" />
+    <jar href="gax-grpc-1.32.0.jar" size="99002" download="eager" />
+    <jar href="gax-httpjson-0.49.0.jar" size="59379" download="eager" />
+    <jar href="google-api-client-1.24.1.jar" size="199917" download="eager" />
+    <jar href="google-api-services-translate-v2-rev51-1.24.1.jar" size="26082" download="eager" />
+    <jar href="google-auth-library-credentials-0.11.0.jar" size="5696" download="eager" />
+    <jar href="google-auth-library-oauth2-http-0.11.0.jar" size="74799" download="eager" />
+    <jar href="google-cloud-core-1.49.0.jar" size="121138" download="eager" />
+    <jar href="google-cloud-core-grpc-1.49.0.jar" size="10341" download="eager" />
+    <jar href="google-cloud-core-http-1.49.0.jar" size="15236" download="eager" />
+    <jar href="google-cloud-speech-0.67.0-beta.jar" size="39475" download="eager" />
+    <jar href="google-cloud-texttospeech-0.67.0-beta.jar" size="34387" download="eager" />
+    <jar href="google-cloud-translate-1.49.0.jar" size="35374" download="eager" />
+    <jar href="google-http-client-1.24.1.jar" size="382725" download="eager" />
+    <jar href="google-http-client-appengine-1.24.1.jar" size="15602" download="eager" />
+    <jar href="google-http-client-jackson2-1.24.1.jar" size="6675" download="eager" />
+    <jar href="google-oauth-client-1.24.1.jar" size="61599" download="eager" />
+    <jar href="grpc-auth-1.13.1.jar" size="13400" download="eager" />
+    <jar href="grpc-context-1.12.0.jar" size="27715" download="eager" />
+    <jar href="grpc-context-1.13.1.jar" size="28521" download="eager" />
+    <jar href="grpc-core-1.13.1.jar" size="685407" download="eager" />
+    <jar href="grpc-netty-shaded-1.13.1.jar" size="6234830" download="eager" />
+    <jar href="grpc-protobuf-1.13.1.jar" size="4870" download="eager" />
+    <jar href="grpc-protobuf-lite-1.13.1.jar" size="8187" download="eager" />
+    <jar href="grpc-stub-1.13.1.jar" size="38874" download="eager" />
+    <jar href="gson-2.7.jar" size="231952" download="eager" />
+    <jar href="guava-20.0.jar" size="2442625" download="eager" />
+    <jar href="httpclient-4.5.3.jar" size="747794" download="eager" />
+    <jar href="httpcore-4.4.6.jar" size="323824" download="eager" />
+    <jar href="jackson-core-2.9.2.jar" size="321243" download="eager" />
+    <jar href="joda-time-2.9.2.jar" size="625596" download="eager" />
+    <jar href="jsr305-3.0.2.jar" size="19936" download="eager" />
+    <jar href="opencensus-api-0.12.3.jar" size="222314" download="eager" />
+    <jar href="opencensus-api-0.15.0.jar" size="236698" download="eager" />
+    <jar href="opencensus-contrib-grpc-metrics-0.12.3.jar" size="11177" download="eager" />
+    <jar href="opencensus-contrib-http-util-0.15.0.jar" size="9404" download="eager" />
+    <jar href="proto-google-cloud-speech-v1-0.32.0.jar" size="195737" download="eager" />
+    <jar href="proto-google-cloud-speech-v1beta1-0.32.0.jar" size="178167" download="eager" />
+    <jar href="proto-google-cloud-speech-v1p1beta1-0.32.0.jar" size="233404" download="eager" />
+    <jar href="proto-google-cloud-texttospeech-v1-0.32.0.jar" size="100045" download="eager" />
+    <jar href="proto-google-cloud-texttospeech-v1beta1-0.32.0.jar" size="102969" download="eager" />
+    <jar href="proto-google-common-protos-1.12.0.jar" size="1200130" download="eager" />
+    <jar href="proto-google-iam-v1-0.12.0.jar" size="112431" download="eager" />
+    <jar href="protobuf-java-3.6.1.jar" size="1421323" download="eager" />
+    <jar href="protobuf-java-util-3.6.1.jar" size="68840" download="eager" />
+    <jar href="sqlite-jdbc-3.23.1.jar" size="6733696" download="eager" />
+    <jar href="threetenbp-1.3.3.jar" size="511401" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="View.Main"  name="dictionaryApp" />
+  <update check="background"/>
+</jnlp>

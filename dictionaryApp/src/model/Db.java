@@ -8,7 +8,7 @@ public class Db {
     public Db() {
         try {
             Class.forName("org.sqlite.JDBC");
-            conn = DriverManager.getConnection("jdbc:sqlite:dictionaryE_V.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:./dictionaryE_V.db");
             stmt = conn.createStatement();
         }catch (ClassNotFoundException e){
             e.printStackTrace();
