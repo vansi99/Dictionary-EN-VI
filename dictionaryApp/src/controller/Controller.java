@@ -10,6 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.ComboBoxListCell;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -46,8 +48,15 @@ public class Controller {
         input_word.setWord(inputText);
         System.out.println(inputText);
         String html = input_word.getDetail();
-        webEngine.loadContent(html);
-
+        System.out.println(html);
+        if(html.equals("")){
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Alert");
+            alert.setContentText("Từ này hiện chưa có trong từ điển!");
+        }
+        else{
+            webEngine.loadContent(html);
+        }
     }
 
     public void showListView() {
@@ -67,15 +76,37 @@ public class Controller {
                     WebEngine webEngine = browser.getEngine();
                     String html = input_word.getDetail();
                     webEngine.loadContent(html);
-
+                    referable_list.setItems(null);
                 }
             });
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
+    public void setOnKeyPressed(KeyEvent key){
+        if (key.getCode() == KeyCode.ENTER) {
+            button_search.setOnMouseEntered( event -> {
+                handleOnSearch();
+            });
+        }
+    }
+//        if(key.getCode() == KeyCode.ENTER)
+//            handleOnSearch();
+//        String inputText = get_word.getText();
+//        input_word.setWord(inputText);
+//        String html = input_word.getDetail();
+//        if(html.equals("")){
+//            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+//            alert.setTitle("Alert");
+//            alert.setHeaderText("Từ này hiện chưa có trong từ điển!");
+//        }
+//        else{
+//            handleOnSearch();
+//        }
+//    }
+
+
 
     public void handleOnVolume() {
         String inputText = get_word.getText();
