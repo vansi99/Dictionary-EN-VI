@@ -6,26 +6,26 @@
     -fx-cursor: hand;
 }
 .button_sound{
-    -fx-background-color: white;
-    -fx-background-image: url("../image/volume.png");
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/speaker.png");
     -fx-background-repeat: stretch;
     -fx-cursor: hand;
 }
 .button_delete{
-    -fx-background-color: white;
+    -fx-background-color: #26527d;
     -fx-background-image: url("../image/trash.png");
     -fx-background-repeat: stretch;
     -fx-cursor: hand;
 }
 .button_add{
     -fx-background-color: #26527d;
-    -fx-background-image: url("../image/add-button.png");
+    -fx-background-image: url("../image/plus.png");
     -fx-background-repeat: stretch;
     -fx-cursor: hand;
 }
 .button_edit{
     -fx-background-color: #26527d;
-    -fx-background-image: url("../image/pen-light.png");
+    -fx-background-image: url("../image/pen.png");
     -fx-background-repeat: stretch;
     -fx-cursor: hand;
 }
@@ -51,6 +51,12 @@
 .button_arrow{
     -fx-background-color: #337aff;
     -fx-background-image: url("../image/long-arrow-pointing-to-the-right.png");
+    -fx-background-repeat: stretch;
+    -fx-cursor: hand;
+}
+.button_google{
+    -fx-background-color: #26527d;
+    -fx-background-image: url("../image/translate-edit.png");
     -fx-background-repeat: stretch;
     -fx-cursor: hand;
 }

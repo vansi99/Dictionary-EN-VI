@@ -19,17 +19,17 @@
             <children>
                 <AnchorPane prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #194775;" stylesheets="@Style.css">
                     <children>
-                  <TextField fx:id="get_word" layoutX="10.0" layoutY="54.0" onKeyReleased="#showListView" onKeyPressed="#setOnKeyPressed" prefHeight="30.0" prefWidth="190.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-                        <Button fx:id="button_search" layoutX="199.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleOnSearch" prefHeight="24.0" prefWidth="24.0" style="-fx-background-image: search.png" styleClass="button_search" stylesheets="@Style.css" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="12.0">
+                  <TextField fx:id="get_word" layoutX="10.0" layoutY="54.0" onKeyPressed="#setOnKeyPressed" onKeyReleased="#showListView" prefHeight="30.0" prefWidth="219.0" promptText="Search..." AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                        <Button fx:id="button_search" layoutX="171.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleOnSearch" prefHeight="25.0" prefWidth="25.0" style="-fx-background-image: search.png" styleClass="button_search" stylesheets="@Style.css" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="14.0">
                             <BorderPane.margin>
                                 <Insets />
                             </BorderPane.margin></Button>
-                        <Label layoutX="81.0" layoutY="16.0" prefHeight="19.0" prefWidth="138.0" text="English Dictionary" textFill="#f8f4f4">
+                        <Label layoutX="79.0" layoutY="16.0" prefHeight="19.0" prefWidth="138.0" text="English Dictionary" textFill="#f8f4f4">
                             <font>
-                                <Font name="System Bold" size="13.0" />
+                                <Font name="Lucida Sans Unicode" size="14.0" />
                             </font>
                         </Label>
-                        <ImageView fitHeight="28.0" fitWidth="30.0" layoutX="48.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="28.0" fitWidth="30.0" layoutX="44.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../image/open-book.png" />
                             </image>
@@ -40,7 +40,7 @@
                     <children>
                         <Label layoutX="47.0" layoutY="58.0" prefHeight="20.0" prefWidth="69.0" styleClass="icon" stylesheets="@Style.css" text="Definition" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="12.0" />
+                        <Font name="Lucida Sans Unicode" size="13.0" />
                      </font>
                         </Label>
                         <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="8.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
@@ -48,9 +48,11 @@
                                 <Image url="@../image/dictionary.png" />
                             </image>
                   </ImageView>
-                  <Button fx:id="button_edit" layoutX="255.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleOnButtonEdit" prefHeight="25.0" prefWidth="25.0" styleClass="button_edit" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0" />
+                  <Button fx:id="button_edit" layoutX="266.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleOnButtonEdit" prefHeight="25.0" prefWidth="25.0" styleClass="button_edit" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="71.0" />
                   <Button fx:id="button_add" layoutX="285.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleOnButtonAdd" prefHeight="25.0" prefWidth="25.0" styleClass="button_add" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="7.0" />
-                  <Button fx:id="button_google_API" layoutX="259.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleOnButtonGoogleAPI" prefHeight="25.0" prefWidth="25.0" text="Button" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="75.0" />
+                  <Button layoutX="229.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleOnVolume" prefHeight="25.0" prefWidth="25.0" styleClass="button_sound" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="108.0" />
+                  <Button layoutX="299.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleOnDeleteWord" prefHeight="25.0" prefWidth="25.0" styleClass="button_delete" stylesheets="@Style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="38.0" />
+                  <Button fx:id="button_google_API" layoutX="330.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleOnButtonGoogleAPI" prefHeight="25.0" prefWidth="25.0" styleClass="button_google" stylesheets="@Style.css" AnchorPane.bottomAnchor="44.0" AnchorPane.rightAnchor="7.0" />
                     </children>
             </AnchorPane>
             </children>
@@ -62,15 +64,7 @@
                 <Insets />
             </BorderPane.margin></ListView>
     </left>
-    <center>
-        <WebView fx:id="browser" prefHeight="315.0" prefWidth="339.0" BorderPane.alignment="CENTER" />
-    </center>
-    <right>
-        <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="317.0" prefWidth="31.0" styleClass="background" stylesheets="@Style.css">
-         <children>
-            <Button layoutX="5.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleOnVolume" prefHeight="25.0" prefWidth="25.0" styleClass="button_sound" stylesheets="@Style.css" AnchorPane.rightAnchor="1.0" />
-            <Button layoutX="3.0" layoutY="36.0" mnemonicParsing="false" onAction="#handleOnDeleteWord" prefHeight="25.0" prefWidth="25.0" styleClass="button_delete" stylesheets="@Style.css" AnchorPane.rightAnchor="3.0" />
-         </children>
-        </AnchorPane>
-    </right>
+   <center>
+        <WebView fx:id="browser" prefHeight="317.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>

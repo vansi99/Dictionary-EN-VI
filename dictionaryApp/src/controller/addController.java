@@ -1,7 +1,4 @@
 package controller;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.web.HTMLEditor;
 import model.DbWords;

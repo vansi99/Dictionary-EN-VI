@@ -1,13 +1,8 @@
 package controller;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.web.HTMLEditor;
 import model.DbWords;
-
-import javax.speech.Word;
 
 public class editController {
     public DbWords editWord = new DbWords();
@@ -41,7 +36,7 @@ public class editController {
 
     public void handleOnEditWord(){
         String editInputWord = editTextField.getText();
-
+        editWord.setWord(editInputWord);
         String editInputText = editHtmlMeaning.getHtmlText();
         System.out.println(editInputText);
         try {

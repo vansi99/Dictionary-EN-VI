@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.*;
 import java.util.ArrayList;
 
 public class DbWords extends Db {
@@ -73,7 +72,6 @@ public class DbWords extends Db {
         VoiceWord su = new VoiceWord();
         su.init("kevin16");
         su.doSpeak(word);
-
     }
 
 
