@@ -71,7 +71,7 @@ public class DbWords extends Db {
 
     public void voiceWord() throws Exception {
         VoiceWord su = new VoiceWord();
-        su.init("mbrola_us1");
+        su.init("kevin16");
         su.doSpeak(word);
 
     }

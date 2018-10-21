@@ -15,17 +15,7 @@ import com.google.protobuf.ByteString;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-import com.google.cloud.speech.v1p1beta1.RecognitionAudio;
-import com.google.cloud.speech.v1p1beta1.RecognitionConfig;
-import com.google.cloud.speech.v1p1beta1.RecognizeResponse;
-import com.google.cloud.speech.v1p1beta1.SpeechClient;
-import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
-import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
-import com.google.protobuf.ByteString;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
+
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -35,8 +35,7 @@ public class Controller {
         WebEngine webEngine = browser.getEngine();
         GoogleApi x = new GoogleApi();
         try {
-            x.recordTextToSpeech();
-            x.playSoundText();
+            x.convertSpeechToText();
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
