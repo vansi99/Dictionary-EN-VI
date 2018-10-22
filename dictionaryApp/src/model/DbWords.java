@@ -53,7 +53,7 @@ public class DbWords extends Db {
     }
 
     public boolean updateWord(String wordNew, String detail) {
-        String sql = "UPDATE dictionary SET word = '" + wordNew + "', detail = '" + detail + "' WHERE word = '" + this.word + "'";
+        String sql = "UPDATE dictionary SET word = ?"+", detail = ?" + " WHERE word = ?";
         return updateData(sql,word,wordNew,detail);
     }
 
