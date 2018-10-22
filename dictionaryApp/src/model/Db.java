@@ -8,7 +8,7 @@ public class Db {
     public Db() {
         try {
             Class.forName("org.sqlite.JDBC");
-            conn = DriverManager.getConnection("jdbc:sqlite:./dictionaryE_V.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:dictionaryE_V.db");
             stmt = conn.createStatement();
         }catch (ClassNotFoundException e){
             e.printStackTrace();
@@ -74,7 +74,7 @@ public class Db {
         return null;
     }
 
-    public boolean postUpdateDeleteData(String sql) {
+    public boolean deleteAndCheckData(String sql) {
         try {
 
             stmt.executeUpdate(sql);
@@ -85,6 +85,37 @@ public class Db {
             System.out.println(e.getMessage());
             return false;
         }
+    }
+
+    public boolean updateData(String sql, String word ,String wordNew, String detail){
+        try{
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setString(1, wordNew);
+            pstm.setString(2, detail);
+            pstm.setString(3, word);
+            pstm.executeUpdate();
+            return true;
+        } catch (SQLException e){
+            System.out.println("fail");
+            System.out.println(e.getMessage());
+            return false;
+        }
+
+    }
+
+    public boolean postData(String sql, String word, String detail){
+        try{
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setString(1, word);
+            pstm.setString(2, detail);
+            pstm.executeUpdate();
+            return true;
+        } catch (SQLException e){
+            System.out.println("fail");
+            System.out.println(e.getMessage());
+            return false;
+        }
+
     }
 
 

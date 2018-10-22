@@ -42,8 +42,8 @@ public class DbWords extends Db {
         }
 
         if(checkWordHad(word) == false) {
-            String sql = "INSERT INTO dictionary(word,detail) VALUES ('" + word + "','" + detail + "')";
-            boolean posted = postUpdateDeleteData(sql);
+            String sql = "INSERT INTO dictionary(word,detail) VALUES (?,?)";
+            boolean posted = postData(sql,word,detail);
             return posted;
         } else {
             System.out.println("Từ này đã có trong từ điển");
@@ -54,7 +54,7 @@ public class DbWords extends Db {
 
     public boolean updateWord(String wordNew, String detail) {
         String sql = "UPDATE dictionary SET word = '" + wordNew + "', detail = '" + detail + "' WHERE word = '" + this.word + "'";
-        return postUpdateDeleteData(sql);
+        return updateData(sql,word,wordNew,detail);
     }
 
 
@@ -64,7 +64,7 @@ public class DbWords extends Db {
             return false;
         }
         String sql = "DELETE FROM dictionary WHERE word = '" + word + "'";
-        boolean deleted = postUpdateDeleteData(sql);
+        boolean deleted = deleteAndCheckData(sql);
         return deleted;
     }
 
